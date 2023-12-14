@@ -1,0 +1,529 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+img, a, p, h1, h2, h3, h4, h5 {
+    user-select: none;
+}
+
+#login{
+    box-shadow: rgba(255, 255, 255, 0.13) 0px 7px 29px 0px;
+}
+
+body, html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+
+.back-to-top {
+    position: fixed;
+    bottom: 1rem;
+    right: .7rem;
+    padding: .5rem .6rem .2rem .6rem;
+    background-color: #469597;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 99;
+    transform: scale(.7);
+}
+
+.back-to-top i {
+    color: #fff;
+}
+
+#loader {
+    background: #fff;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: grid;
+    place-items: center;
+    z-index: 99;
+    transition: 500ms;
+}
+
+.container {
+    max-width: 1500px;
+    width: 100%;
+    height: 100%;
+}
+
+.navbar-fixed {
+    top: 0;
+    position: fixed;
+    width: 100%;
+    max-width: 1500px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+}
+
+.navbar-fixed .nav .nav-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.navbar-fixed .nav .nav-wrapper .nav-brand {
+    width: 12rem;
+    height: auto;
+    margin: 1rem;
+    margin-bottom: .7rem;
+    object-fit: contain;
+}
+
+a.active {
+    background-color: #00000067;
+}
+
+.nav {
+    background: transparent;
+    box-shadow: none;
+    transition: 200ms;
+}
+
+.nav.scrolled {
+    background: #469597;
+}
+
+.container .wrapper {
+    position: relative;
+    height: 100%;
+    z-index: -1;
+    transform: scale(1);
+}
+
+.container .wrapper img {
+    width: 100%;
+    margin: 0;
+    height: 100vh;
+    aspect-ratio: 16/9;
+    top: 0;
+    left: 0;
+    z-index: -2;
+    filter: brightness(.5);
+    object-fit: cover;
+    /* clip-path: circle(100% at 50% 50%); */
+}
+
+/* .container .wrapper .screen {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0; */
+/* background-color: #00000067;
+    z-index: 1;
+} */
+
+.container .wrapper .hero-text {
+    position: absolute;
+    height: 90vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 99 !important;
+}
+
+.container .wrapper .hero-text h2 {
+    font-family: 'Pacifico', cursive;
+    color: #fff;
+    font-size: 2.5em;
+}
+
+.container .wrapper .hero-text p {
+    font-family: "Poppins", sans-serif;
+    color: #fff;
+    width: 40%;
+    min-width: 40rem;
+    text-align: center;
+}
+
+.container .wrapper .hero-text .line {
+    background-color: #fff;
+    width: 10rem;
+    height: 2px;
+    margin-top: 1.5rem;
+}
+
+.container .section2 {
+    background-color: #fff;
+    position: relative;
+    padding: 0rem 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    /* margin-top: 3rem; */
+    /* overflow: hidden; */
+}
+
+.container .section2 h1 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 2.7em;
+}
+
+.container .section2 p {
+    text-align: center;
+    width: 50%;
+    min-width: 40rem;
+    margin: 2rem auto 3rem auto;
+}
+
+.container .section2 .buttons-kelas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.3rem;
+    margin-bottom: 2.3rem;
+}
+
+.container .section2 .buttons-kelas .kelas-button {
+    border-radius: 30px;
+    background-color: transparent;
+    color: #000;
+}
+
+/* .container .section2 .buttons-kelas .kelas-button:focus,
+.container .section2 .buttons-kelas .kelas-button:active, */
+.container .section2 .buttons-kelas .kelas-button:hover {
+    background-color: #469597;
+    color: #fff;
+}
+
+.table-wrapper {
+    width: 80%;
+    margin: 0 auto;
+}
+
+#select-hari {
+    width: 13rem;
+}
+
+.container .section2 #table-jadwal,
+#table-tugas, #table-matkul {
+    margin: 0 auto 2rem auto;
+    background: #469597;
+    color: #fff;
+    padding: 1rem;
+}
+
+.container .section2 #table-jadwal thead tr th:nth-child(1),
+.container .section2 #table-jadwal tbody tr td:nth-child(1) {
+    padding-left: 2rem;
+}
+
+.container .section2 #table-jadwal thead tr th,
+.container .section2 #table-tugas thead tr th 
+,.container .section2 #table-matkul thead tr th {
+    background: #5BA199;
+}
+
+.container .section2 #table-tugas thead tr th:nth-child(1),
+.container .section2 #table-tugas tbody tr td:nth-child(1) {
+    padding-left: 2rem;
+}
+
+.title-table {
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+#matkul {
+    overflow-x: auto !important;
+    width: 80%;
+    height: max-content;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.table-scroll {
+    width: 100%;
+    min-width: 53rem !important;
+}
+
+.fun-intro {
+    height: 100vh;
+    font-size: 1.1em;
+    font-weight: 700;
+    font-family: "Poppins", sans-serif;
+    color: #333333;
+    line-height: 2rem;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-self: flex-end;
+    padding: 10rem 0;
+    margin: 0 auto;
+}
+
+.char {
+    transform: translateX(1500px);
+    margin: .5rem 0;    
+}
+
+.container #mahasiswa {
+    height: fit-content;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    justify-content: center;    
+}
+
+.container #mahasiswa .card {
+    width: fit-content;
+    position: relative;
+    transform: translateY(1.2rem);
+    opacity: 0;
+}
+
+.container #mahasiswa .card .title-wrapper {
+    background: #fff;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    clip-path: polygon(0 34%, 100% 0, 100% 100%, 0% 100%);
+}
+
+.card-nim {
+    margin-bottom: 1rem;
+    font-size: 1.1em;
+}
+
+.card-titles {
+    font-weight: bold;
+    font-size: 1.3em;
+    color: #5BA199;
+}
+
+.card-image {
+    width: 19rem;
+    object-fit: cover;
+}
+
+.container #blog {
+    height: fit-content;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.7rem;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 0;
+    /* opacity: 0; */
+}
+
+.blog-header {
+    height: fit-content;
+    width: fit-content;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.blog-card {
+    display: flex;
+    gap: 2rem;
+    transform: translateX(-200rem);
+}
+
+.container #blog .blog-card img {
+    width: 40rem;
+    object-fit: cover;
+}
+
+.text-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.blog-title {
+    font-weight: bold;
+    font-size: 1.9em;
+}
+
+.blog-time-post {
+    opacity: .6;
+}
+
+#blog h1 {
+    font-size: 2.4em;
+    font-weight: bold;
+    transform: scale(1.1) translateX(30rem);
+}
+
+.container #pesan{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.pesan-header{
+    font-size: 2.4em;
+    font-weight: bold;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.hashtag{
+    display: flex;
+    flex-direction: row;
+    gap: .5rem;
+}
+
+.hashtag li{
+    list-style: none;
+    color: #469597;
+    font-weight: 700;
+}
+
+@media (min-width: 1400px) {}
+
+@media (max-width: 700px) {    
+    .fun-intro{
+        line-height: 0rem;
+        padding: 3rem 0;
+    }
+    .char{
+        font-size: .7em;
+    }
+
+
+    #select-hari {
+        margin: 2rem auto;
+    }
+
+    #matkul {
+        width: 95%;
+    }
+
+    .container .wrapper .hero-text {
+        align-items: flex-start;
+        padding: 0 1rem;
+    }
+
+    .container .section2 p {
+        text-align: center;
+        width: 100%;
+        min-width: 0rem;
+        margin: 0 auto 3rem auto;
+        padding: 0 1.2rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .blog-card {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container #blog .blog-card img {
+        width: 100%;
+    }
+
+    .container .wrapper .hero-text {
+        position: absolute;
+        height: 90%;
+        width: 100%;
+    }
+
+    .container .wrapper .hero-text {
+        align-items: flex-start;
+        padding: 0 2rem;
+    }
+
+    .container .wrapper .hero-text h2 {
+        text-align: left;
+        font-size: 2em;
+    }
+
+
+    .container .wrapper .hero-text p {
+        text-align: left;
+        width: 100%;
+        min-width: 0rem;
+    }
+
+    .container .wrapper img {
+        width: 100%;
+        margin: 0;
+        height: 100vh;
+        aspect-ratio: 16/9;
+        object-fit: cover;
+        top: 0;
+        left: 0;
+    }
+
+    .container .section2 #table-jadwal thead tr th:nth-child(1),
+    .container .section2 #table-jadwal tbody tr td:nth-child(1),
+    .container .section2 #table-tugas thead tr th:nth-child(1),
+    .container .section2 #table-tugas tbody tr td:nth-child(1) {
+        padding-left: 0rem;
+    }
+
+}
+
+/* Add this to your existing styles or create a new section for table styling */
+
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.styled-table th, .styled-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.styled-table th {
+    background-color: #f2f2f2;
+}
+
+.styled-table tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+.ig{
+    display: flex;
+    gap: 1rem;
+    flex-direction: row;
+}
+
+@media (max-width: 1010px) {
+    .ig{
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 810px) {
+    .ig{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
