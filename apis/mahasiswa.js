@@ -8,13 +8,16 @@ fetch(apiUrlMahasiswa)
     return response.json();
   })
   .then(data => {
+    // Sort the data array based on the 'nim' property in ascending order
+    data.sort((a, b) => a.nim - b.nim);
+
     // Assuming data is an array of objects
     const apiDataTableBodyMahasiswa = document.getElementById('mahasiswa-table').querySelector('tbody');
 
     // Clear existing content
     apiDataTableBodyMahasiswa.innerHTML = '';
 
-    no = 1;
+    let no = 1;
 
     data.forEach(item => {
       const row = document.createElement('tr');
@@ -24,7 +27,7 @@ fetch(apiUrlMahasiswa)
         <td>${item.nim}</td>
         <td>${item.jabatan}</td>            
       `;
-      
+
       apiDataTableBodyMahasiswa.appendChild(row);
     });
   })
